@@ -1,0 +1,29 @@
+Algoritmo "CONTADORDEHORA"
+// AULA DO DIA 18/08/2023
+// ESCOLA ESTADUAL PROF JOSÉ VILAGELIN NETO
+// PROFESSOR JEFFERSON MAGLIO
+// INFORMÁTICA PARA INTERNET
+
+Var
+hr,min,seg,hrd,mind,segd:inteiro
+
+Inicio
+escreva("Digite a hora:")
+leia(hrd)
+escreva("Digite o minuto:")
+leia(mind)
+escreva("Digite o segundo:")
+leia(segd)
+
+para hr <- 0 ate 23 faca
+   para min <- 0 ate  59 faca
+       para seg <- 0 ate 59 faca
+          escreval(hr," horas",min," minutos",seg," seg")
+          se (hr = hrd) e (min = mind) e (seg = segd) entao
+          interrompa
+          fimse
+       fimpara
+   fimpara
+fimpara
+
+Fimalgoritmo
