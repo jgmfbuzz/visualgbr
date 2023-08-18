@@ -1,13 +1,13 @@
 Algoritmo "Calculadora Simples"
 // AULA DO DIA 18/08/2023
-// ESCOLA ESTADUAL PROF JOS… VILAGELIN NETO
+// ESCOLA ESTADUAL PROF JOS√â VILAGELIN NETO
 // PROFESSOR JEFFERSON MAGLIO
-// INFORM¡TICA PARA INTERNET
+// INFORM√ÅTICA PARA INTERNET
 
 
 
 Var
-// SeÁ„o de DeclaraÁıes das vari·veis
+// Se√ß√£o de Declara√ß√µes das vari√°veis
 
 resultado : real
 numero : real
@@ -22,13 +22,13 @@ escreval (" ")
 
 repita
 
-escreval ("Digite o primeiro n˙mero: ")
+escreval ("Digite o primeiro n√∫mero: ")
 leia (resultado)
 
-escreval ("Escolha a operaÁ„o [+ - * /]")
+escreval ("Escolha a opera√ß√£o [+ - * /]")
 leia (operacao)
 
-escreval ("Digite o n˙mero: ")
+escreval ("Digite o n√∫mero: ")
 leia (numero)
 
 escolha operacao
@@ -49,7 +49,7 @@ fimescolha
 
 escreval(" ")
 
-escreval ("O seu n˙mero È: ")
+escreval ("O seu n√∫mero √©: ")
 escreval (resultado)
 
 escreva ("Deseja continuar S/N")
