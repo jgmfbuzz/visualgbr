@@ -1,0 +1,124 @@
+Algoritmo "cadastro"
+// AULA DO DIA 18/08/2023
+// ESCOLA ESTADUAL PROF JOSÉ VILAGELIN NETO
+// PROFESSOR JEFFERSON MAGLIO
+// INFORMÁTICA PARA INTERNET
+
+//-------------------------------------------------------
+// FONTE - Disciplina  : ENG SOFT - ALGORITMOS E LÓGICA DE PROGRAMAÇÃO I - 2018B1
+// Descrição   : Mapa, cadastro de pessoas
+
+Tipo
+   cad_pessoa = registro
+      nome : caractere
+      nome : caractere
+      idade : inteiro
+      sexo : caractere
+      quantFilhos : inteiro
+      renda: real
+   fimregistro
+
+Var
+   pessoa : vetor[1..10] de cad_pessoa
+   somanotas, maioresDeIdade : real
+   i, totalPessoas, repostaSexo, quantFem, quantMasc: inteiro
+   maisDeUmFilho, contadorRenda, quantCadastrada: inteiro
+   totalSexo, calcMasc, calcFem, calcFilhos: real
+
+Inicio
+   totalPessoas <- 20
+   maioresDeIdade <- 0
+   maisDeUmFilho <- 0
+   quantCadastrada <- 0
+
+   EscrevaL("----------------------------------------")
+   EscrevaL(" Favor responder as seguintes perguntas:")
+   EscrevaL("----------------------------------------")
+   EscrevaL(" * Entre um nome vazio para terminar ou pressione ESC para sair")
+   EscrevaL("----------------------------------------")
+// De 1 a numeroMaximo de pessoas
+   para i de 1 ate totalPessoas faca
+       quantCadastrada <- quantCadastrada + 1
+
+   //   Nome
+       Escreva("1) Informe nome da pessoa: ")
+       Leia(pessoa[i].nome)
+       // Se nome for igual vazio sair do loop
+       se(pessoa[i].nome = "") entao
+           quantCadastrada <- quantCadastrada - 1
+           interrompa
+       fimse
+
+   //   Idade
+       Escreva("2) Informe a idade da pessoa: ")
+       Leia(pessoa[i].idade)
+        // Se idade >= 18, maioresDeIdade++
+        se(pessoa[i].idade >= 18) entao
+            maioresDeIdade <- maioresDeIdade + 1
+        fimse
+
+   //   Sexo
+        // Fica no loop enquanto a resposta não for válida
+        enquanto repostaSexo <> 1 faca
+          Escreva("3) Informe a sexo da pessoa (M ou F): ")
+          Leia(pessoa[i].sexo)
+          // Se M quantMasc++, se F quantFem++
+          // Sair do loop
+          se(pessoa[i].sexo = "F") entao
+            quantFem <- quantFem + 1
+            repostaSexo <- 1
+          fimse
+          se(pessoa[i].sexo = "M") entao
+            quantMasc <- quantMasc + 1
+            repostaSexo <- 1
+          fimse
+        fimenquanto
+        repostaSexo <- 0
+   //   Quantidade de filhos
+       Escreva("4) Quantos filhos a pessoa tem: ")
+       Leia(pessoa[i].quantFilhos)
+         // Se quantFilhos >= 1 maisDeUmFilho ++
+         se (pessoa[i].quantFilhos >= 1) entao
+           maisDeUmFilho <- maisDeUmFilho + 1
+         fimse
+
+   //   Renda mensal familiar
+       Escreva("5) Informe a renda mensal da pessoa: ")
+       Leia(pessoa[i].renda)
+        // Se renda for >= 500 contadorRenda ++
+        se (pessoa[i].renda >= 500) entao
+           contadorRenda <- contadorRenda + 1
+        fimse
+        EscrevaL("  Cadastro dessa pessoa concluido.")
+        EscrevaL("")
+   fimpara
+
+   // Calcular e exibir
+   EscrevaL("")
+   EscrevaL("Resultados:")
+
+   calcMasc <- 0
+   calcFem <- 0
+   calcFilhos <- 0
+
+   //   % de homens e mulheres
+   // Só exibe se existe total para ser exibido (mais de 1 pessoa cadastrada)
+   se (quantCadastrada > 0) entao
+      calcFem <- quantFem * 100 / quantCadastrada
+      EscrevaL("Do total", calcFem , "% é feminino.")
+      calcMasc <- quantMasc * 100 / quantCadastrada
+      EscrevaL("Do total", calcMasc , "% é masculino.")
+   fimse
+
+   //   Numero de pessoas com renda maior que 500.00
+   EscrevaL("O total de pessoas com renda maior que R$500,00 é de:", contadorRenda)
+
+   //   % de pessoas que tem ao menos 1 filho
+   se (maisDeUmFilho <> 0) entao
+      //calcFilhos <- maisDeUmFilho * 100 / quantCadastrada
+      EscrevaL("A quantidade de pessoas no cadastro com ao menos um filho é de:", maisDeUmFilho)
+
+   //   Numero de pessoas que nasceram a partir do ano 2000
+   EscrevaL("A quantidade de pessoas no cadastro que tem ao menos 18 anos é de:", maioresDeIdade)
+
+Fimalgoritmo
